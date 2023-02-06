@@ -7,8 +7,9 @@
 int main()
 {
     int arr[5] = { 1, 3,8,2,-1};
-    SortedArrayC* x = create_SortedArray(arr, 5);
+    SortedStack x = create_SortedStack(arr, 5);
     print_sorted_array(x);
+    free_SortedStack(x);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

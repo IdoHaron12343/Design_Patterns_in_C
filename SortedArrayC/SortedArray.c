@@ -2,9 +2,10 @@
 
 /* private methods */
 
-void swap(int* a, int* b);
-int partition(int* array, int low, int high);
-int* __quick_sort(int* array, int low, int high);
+static void swap(int* a, int* b);
+static int partition(int* array, int low, int high);
+static int* __quick_sort(int* array, int low, int high);
+static SortedArrayC* convert_pointer(SortedArray pointer) { return (SortedArrayC*)pointer; };
 
 
 /* private method */
@@ -51,33 +52,34 @@ int* copy_array(int* arr, int length) {
 
  /* public static method */
 int* quick_sort(int* arr, int length) {
-    return __quick_sort(arr, 0, length);
+    return __quick_sort(arr, 0, length-1);
 }
 
 
-SortedArrayC* create_SortedArray(int* arr, int length) {
-    arr = quick_sort(arr, length);
+SortedArray create_SortedArray(int* arr, int length) {
     SortedArrayC* sorted_arr = (SortedArrayC*)malloc(sizeof(SortedArrayC));
     if (sorted_arr == NULL)
         return NULL;
     construct_SortedArrayC(sorted_arr, arr, length);
-    return sorted_arr;
+    return (SortedArray)sorted_arr;
 }
 
-void free_SortedArray(SortedArrayC* to_free) {
-    free(to_free->arr);
-    free(to_free);
+void free_SortedArray(SortedArray to_free) {
+    free(convert_pointer(to_free)->arr);
+    free(convert_pointer(to_free));
 }
 
-void print_sorted_array(SortedArrayC* to_print) {
-    for (int i = 0; i < to_print->length; i++) {
-        printf("%d\t", to_print->arr[i]);
+void print_sorted_array(SortedArray to_print) {
+
+    for (int i = 0; i < convert_pointer(to_print)->length; i++) {
+        printf("%d\t", convert_pointer(to_print)->arr[i]);
     }
     printf("\n");
 }
 
 SortedArrayC* construct_SortedArrayC(SortedArrayC* obj, int* arr, int length) {
     obj->arr = copy_array(arr, length);
+    arr = quick_sort(obj->arr, length);
     obj->length = length;
     return obj;
 }
