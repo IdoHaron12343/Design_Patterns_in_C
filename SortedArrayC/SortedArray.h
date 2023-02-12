@@ -3,16 +3,20 @@
 #include "base_header.h"
 #endif // baseheader
 
+
 typedef void* SortedArray;
 
 /*constructor based on start array*/
-SortedArray create_SortedArray(int* start_array, int length_array);
+SortedArray construct_SortedArray(int* start_array, int length_array);
 
+/*returns a copy of the SortedArrayy*/
+int* get_array_copy_SortedArray(SortedArray arr);
 
-int* quick_sort(int* arr, int length);
+/*retruns the element from the element_place in the SortedArray*/
+int get_element_SortedArray(SortedArray arr, int element_place);
 
-// int get_element_place_in_SortedArray(SortedArrayC* sorted_array, int element_to_find);
+/*prints the SortedArray's elements.*/
+void print_SortedArray(SortedArray arr);
 
-void print_sorted_array(SortedArray arr);
-
-void free_SortedArray(SortedArray current_array);
+/*cleans the allocation of the SortedArray*/
+void deconstruct_SortedArray(SortedArray current_array);

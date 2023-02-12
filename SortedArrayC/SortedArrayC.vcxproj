@@ -136,9 +136,9 @@
     <ClInclude Include="base_header.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="protected_SortedArray.h" />
-    <ClInclude Include="protected_SortedStack.h" />
+    <ClInclude Include="protected_SortedArrayStack.h" />
     <ClInclude Include="SortedArray.h" />
-    <ClInclude Include="SortedStack.h" />
+    <ClInclude Include="SortedArrayStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,7 +6,7 @@ SortedStack create_SortedStack(int* start_array, int length_array) {
 	SortedStackC* sorted_stack = (SortedStackC*)malloc(sizeof(SortedStackC));
 	if (sorted_stack == NULL)
 		return NULL;
-	construct_SortedArrayC((SortedArrayC*)sorted_stack, start_array, length_array);
+	initilaize_SortedArrayC((SortedArrayC*)sorted_stack, start_array, length_array);
 	sorted_stack->ordered_elements = (NodeC*) NULL;
 	return (SortedStack)sorted_stack;
 };

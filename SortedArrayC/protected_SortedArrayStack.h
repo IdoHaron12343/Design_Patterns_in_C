@@ -3,7 +3,7 @@
 #include "protected_SortedArray.h"
 #include "List.h"
 
-typedef struct SortedStackS
+typedef struct SortedArrayStackS
 {
 	int* arr;
 	int length;

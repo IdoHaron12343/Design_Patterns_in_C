@@ -8,7 +8,7 @@ int main()
 {
     int arr[5] = { 1, 3,8,2,-1};
     SortedStack x = create_SortedStack(arr, 5);
-    print_sorted_array(x);
+    print_SortedArray(x);
     free_SortedStack(x);
 }
 

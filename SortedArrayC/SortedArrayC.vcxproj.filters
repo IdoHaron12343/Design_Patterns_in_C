@@ -47,10 +47,10 @@
     <ClInclude Include="SortedArray.h">
       <Filter>Header Files\SortedArray</Filter>
     </ClInclude>
-    <ClInclude Include="protected_SortedStack.h">
+    <ClInclude Include="protected_SortedArrayStack.h">
       <Filter>Header Files\SortedStack</Filter>
     </ClInclude>
-    <ClInclude Include="SortedStack.h">
+    <ClInclude Include="SortedArrayStack.h">
       <Filter>Header Files\SortedStack</Filter>
     </ClInclude>
   </ItemGroup>
